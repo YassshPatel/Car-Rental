@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car List</title>
+    <style>
+        
+.container{
+    width: 840px;
+    margin: 0 auto;
+    height: 1200px;
+  }
+  .car{
+    position: relative;
+    display: inline-block;
+    width: 240px;  
+    height: 335px;
+    overflow: visible;
+    z-index: 1;
+    border-radius: 2px;
+    margin: 0 20px 20px 0;
+  }
+  .details{
+    position: absolute;
+    height: 335px;
+    width: 240px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3);
+  }
+  .photo img{
+    position: absolute; 
+    width: 240px;
+  }
+  .car-1 h2{
+padding-top: 50%;
+padding-left: 30%;
+  }
+</style>
+</head>
+<body>
+    <div id="container">
+        <div class="car">
+            <div class="detail">
+                <div class="photo">
+                    <img src="AvatarMaker (1).png" alt="Avatar" height="100px" width="100px">
+                </div>
+                <div class="car-1">
+                    <h2>SUV</h2>
+                    <div class="car-detail">
+                        <h3>Family Car</h3>
+                        <div class="click">
+                            <a href="#">More Detail</a>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iusto sapiente totam nobis dicta inventore.</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
