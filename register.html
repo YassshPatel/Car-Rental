@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- oauth -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="471670028965-o7i39pqp58kppg3glh9ujtu466kgflnd.apps.googleusercontent.com">
+
+
+    <!-- auth0 -->
+    <!-- <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script> -->
+    
+</head>
+<body>
+
+<section class="py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 grid-cols-1 gap-x-24">
+          <div class="">
+              <div class="">
+                  <h2 class="text-gray-900 font-manrope text-4xl font-semibold leading-10 mb-9 lg:text-left text-center">Hello :)</h2>
+                  <form id="registerForm" class="userForm">
+                    <div class="mb-6">
+                        <input type="text" id="name" class="w-full h-14 shadow-sm text-gray-600 placeholder-text-400 text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none py-2 px-4" placeholder="Name">
+                        <p id="nameError" class="text-red-600 hidden">Name is required</p>
+                    </div>
+                    <div class="mb-6">
+                        <input type="text" id="number" class="w-full h-14 shadow-sm text-gray-600 placeholder-text-400 text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none py-2 px-4" placeholder="Number">
+                        <p id="numberError" class="text-red-600 hidden">Only number is required and must be 10 digits</p>
+                    </div>
+                    <div class="mb-6">
+                        <input type="email" id="email" class="w-full h-14 shadow-sm text-gray-600 placeholder-text-400 text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none py-2 px-4" placeholder="Email">
+                        <p id="emailError" class="text-red-600 hidden">Invalid email format</p>
+                    </div>
+                    <div class="mb-6">
+                        <input type="password" id="password" class="w-full h-14 shadow-sm text-gray-600 placeholder-text-400 text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none py-2 px-4" placeholder="Password">
+                        <p id="passwordError" class="text-red-600 hidden">Password must be at least 6 characters</p>
+                    </div>
+                    <div class="mb-6">
+                      <input type="password" id="confirmPassword" class="w-full h-14 shadow-sm text-gray-600 placeholder-text-400 text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none py-2 px-4" placeholder="Confirm Password" >
+                      <p id="confirmPasswordError" class="text-red-600 hidden">Passwords do not match</p>
+                  </div>
+        <div class="g-recaptcha" data-sitekey="6LcxLP8pAAAAAD-5uNXNTE_di9mIHxF07wiJBboY"></div>
+
+                    <button type="submit" class="w-full h-12 text-center text-white text-base font-semibold leading-6 rounded-full bg-indigo-600 shadow transition-all duration-700 hover:bg-indigo-800 mt-6">Register</button>
+                </form>
+                  <script src="./script/validation.js"></script>
+                  <p class="mt-10 text-center text-sm text-gray-500">
+                    Already a member?
+                    <a href="login.html" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Login</a>
+
+                  </p>
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+              </div>
+          </div>
+          <div class="lg:max-w-xl w-full h-[600px] flex items-center justify-center  bg-cover bg-no-repeat bg-[url('https://pagedone.io/asset/uploads/1696245837.png')] ">
+              
+          </div>
+    </div>
+  </div>
+</section>
+
+
+  
+</body>
+
+<script>
+    function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+
+
+</script>
+</html>

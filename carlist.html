@@ -2,63 +2,187 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car List</title>
-    <style>
+    <title>Car Rental</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("header.html");
+        });
         
-.container{
-    width: 840px;
-    margin: 0 auto;
-    height: 1200px;
-  }
-  .car{
-    position: relative;
-    display: inline-block;
-    width: 240px;  
-    height: 335px;
-    overflow: visible;
-    z-index: 1;
-    border-radius: 2px;
-    margin: 0 20px 20px 0;
-  }
-  .details{
-    position: absolute;
-    height: 335px;
-    width: 240px;
-    overflow: hidden;
-    background-color: #fff;
-    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3);
-  }
-  .photo img{
-    position: absolute; 
-    width: 240px;
-  }
-  .car-1 h2{
-padding-top: 50%;
-padding-left: 30%;
-  }
-</style>
+  $(function(){
+      $("#footer").load("footer.html");
+  });
+</script>
+
+    <link rel="stylesheet" href="./style/car.css">
 </head>
 <body>
-    <div id="container">
-        <div class="car">
-            <div class="detail">
-                <div class="photo">
-                    <img src="AvatarMaker (1).png" alt="Avatar" height="100px" width="100px">
+
+    <div id="header"></div>
+    <section class="py-20 relative">
+        <div class="w-full max-w-2xl lg:max-w-7xl px-6 lg:px-8 mx-auto">
+            <h1 class="font-manrope font-medium text-4xl text-gray-900 mb-10 max-md:text-center">Which one you want?</h1>
+
+            <div class="search-container mb-6 flex justify-between items-center bg-white p-4 shadow rounded-lg">
+                <input type="number" id="priceInput" placeholder="Enter max price" class="border rounded px-2 py-1 w-full mr-2">
+                
+                <select id="typeInput" class="border rounded px-2 py-1 w-full mr-2">
+                    <option value="">Select car type</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Sedan">Sedan</option>
+                    <option value="Electric">Electric</option>
+                    <option value="Sports">Sports</option>
+                </select>
+                
+                <button id="searchButton" class="border border-black py-2 px-4 rounded bg-indigo-600 text-white hover:bg-indigo-700 transition">Search</button>
+            </div>
+
+            <div class="grid1">
+                <!-- SUV Cars -->
+                <div class="group" data-type="SUV" data-price="60">
+                    <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">TOYOTA COROLLA CROSS</h4>
+                    <div class="block bg-indigo-100">
+                        <img src="images/suv1.png" alt="SUV 1">
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">$60.00/day</h4>
+                        <p class="font-medium text-lg text-gray-400">Unlimited kilometers</p>
+                    </div>
                 </div>
-                <div class="car-1">
-                    <h2>SUV</h2>
-                    <div class="car-detail">
-                        <h3>Family Car</h3>
-                        <div class="click">
-                            <a href="#">More Detail</a>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iusto sapiente totam nobis dicta inventore.</p>
-                        </div>
+
+                <div class="group" data-type="SUV" data-price="55">
+                    <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">FORD ESCAPE</h4>
+                    <div class="block bg-indigo-100">
+                        <img src="images/suv2.png" alt="SUV 2">
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">$55.00/day</h4>
+                        <p class="font-medium text-lg text-gray-400">Unlimited kilometers</p>
+                    </div>
+                </div>
+
+                <div class="group" data-type="SUV" data-price="50">
+                    <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">FORD EDGE</h4>
+                    <div class="block bg-indigo-100">
+                        <img src="images/suv3.png" alt="SUV 3">
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">$50.00/day</h4>
+                        <p class="font-medium text-lg text-gray-400">Unlimited kilometers</p>
+                    </div>
+                </div>
+
+                <!-- Sedan Cars -->
+                <div class="group" data-type="Sedan" data-price="65">
+                    <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">BMW 3 SERIES</h4>
+                    <div class="block bg-indigo-100">
+                        <img src="images/lux_sedan1.png" alt="Sedan 1">
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">$65.00/day</h4>
+                        <p class="font-medium text-lg text-gray-400">Unlimited kilometers</p>
+                    </div>
+                </div>
+
+                <div class="group" data-type="Sedan" data-price="70">
+                    <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">TOYOTA COROLLA</h4>
+                    <div class="block bg-indigo-100">
+                        <img src="images/sedan1.png" alt="Sedan 2">
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">$70.00/day</h4>
+                        <p class="font-medium text-lg text-gray-400">Unlimited kilometers</p>
+                    </div>
+                </div>
+
+                <div class="group" data-type="Sedan" data-price="75">
+                    <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">TOYOTA CAMRY</h4>
+                    <div class="block bg-indigo-100">
+                        <img src="images/sedan2.png" alt="Sedan 3">
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">$75.00/day</h4>
+                        <p class="font-medium text-lg text-gray-400">Unlimited kilometers</p>
+                    </div>
+                </div>
+
+                <!-- Electric Cars -->
+                <div class="group" data-type="Electric" data-price="72">
+                    <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">Electric 1</h4>
+                    <div class="block bg-indigo-100">
+                        <img src="Car-Rental/Assets/img/cars/car7.png" alt="Electric 1">
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">$72.00/day</h4>
+                        <p class="font-medium text-lg text-gray-400">Unlimited kilometers</p>
+                    </div>
+                </div>
+
+                <div class="group" data-type="Electric" data-price="68">
+                    <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">Electric 2</h4>
+                    <div class="block bg-indigo-100">
+                        <img src="Car-Rental/Assets/img/cars/car8.png" alt="Electric 2">
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">$68.00/day</h4>
+                        <p class="font-medium text-lg text-gray-400">Unlimited kilometers</p>
+                    </div>
+                </div>
+
+                <div class="group" data-type="Electric" data-price="65">
+                    <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">Electric 3</h4>
+                    <div class="block bg-indigo-100">
+                        <img src="Car-Rental/Assets/img/cars/car9.png" alt="Electric 3">
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">$65.00/day</h4>
+                        <p class="font-medium text-lg text-gray-400">Unlimited kilometers</p>
+                    </div>
+                </div>
+
+                <!-- Sports Cars -->
+                <div class="group" data-type="Sports" data-price="75">
+                    <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">Sports 1</h4>
+                    <div class="block bg-indigo-100">
+                        <img src="Car-Rental/Assets/img/cars/car10.png" alt="Sports 1">
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">$75.00/day</h4>
+                        <p class="font-medium text-lg text-gray-400">Unlimited kilometers</p>
+                    </div>
+                </div>
+
+                <div class="group" data-type="Sports" data-price="80">
+                    <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">Sports 2</h4>
+                    <div class="block bg-indigo-100">
+                        <img src="Car-Rental/Assets/img/cars/car11.png" alt="Sports 2">
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">$80.00/day</h4>
+                        <p class="font-medium text-lg text-gray-400">Unlimited kilometers</p>
+                    </div>
+                </div>
+
+                <div class="group" data-type="Sports" data-price="85">
+                    <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">Sports 3</h4>
+                    <div class="block bg-indigo-100">
+                        <img src="Car-Rental/Assets/img/cars/car12.png" alt="Sports 3">
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-manrope font-semibold text-gray-900 mb-1">$85.00/day</h4>
+                        <p class="font-medium text-lg text-gray-400">Unlimited kilometers</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <script src="./script/carlist.js"></script>
+
+<div id="footer"></div> 
 </body>
 </html>

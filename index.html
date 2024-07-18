@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Locator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      gmpx-store-locator {
+        width: 100%;
+        height: 100%;
+
+        /* These parameters customize the appearance of Locator Plus. See the documentation at
+           https://github.com/googlemaps/extended-component-library/blob/main/src/store_locator/README.md
+           for more information. */
+        --gmpx-color-surface: #fff;
+        --gmpx-color-on-surface: #212121;
+        --gmpx-color-on-surface-variant: #757575;
+        --gmpx-color-primary: #1967d2;
+        --gmpx-color-outline: #e0e0e0;
+        --gmpx-fixed-panel-width-row-layout: 28.5em;
+        --gmpx-fixed-panel-height-column-layout: 65%;
+        --gmpx-font-family-base: "Roboto", sans-serif;
+        --gmpx-font-family-headings: "Roboto", sans-serif;
+        --gmpx-font-size-base: 0.875rem;
+        --gmpx-hours-color-open: #188038;
+        --gmpx-hours-color-closed: #d50000;
+        --gmpx-rating-color: #ffb300;
+        --gmpx-rating-color-empty: #e0e0e0;
+      }
+    </style>
+
+    
+    <script>
+      const CONFIGURATION = {
+        "locations": [
+          {"title":"353 Kane Ave","address1":"353 Kane Ave","address2":"York, ON M6M 3N9, Canada","coords":{"lat":43.69004625903108,"lng":-79.46964086441803},"placeId":"ChIJVzniD_4zK4gRuE14dZxKaoI"},
+          {"title":"7280 Darcel Ave","address1":"7280 Darcel Ave","address2":"Mississauga, ON L4T 3T7, Canada","coords":{"lat":43.72128750321548,"lng":-79.63720837790984},"placeId":"ChIJf5YE55I7K4gRA7LPZQDpPMI"},
+          {"title":"Humber International Graduate School","address1":"59 Hayden St Unit 400","address2":"Toronto, ON M4Y 2P2, Canada","coords":{"lat":43.66992173005798,"lng":-79.38378880674591},"placeId":"ChIJHwKzwBc1K4gRJnCEzPu2MPI"},
+          {"title":"Toronto Pearson International Airport","address1":"6301 Silver Dart Dr","address2":"Mississauga, ON L5P 1B2, Canada","coords":{"lat":43.67717233820239,"lng":-79.6334907816147},"placeId":"ChIJkdQtwEo5K4gRxQ4DxOldHbQ"}
+        ],
+        "mapOptions": {"center":{"lat":38.0,"lng":-100.0},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17,"mapId":""},
+        "mapsApiKey": "YOUR_API_KEY_HERE",
+        "capabilities": {"input":false,"autocomplete":false,"directions":false,"distanceMatrix":false,"details":false,"actions":false}
+      };
+
+    </script>
+    <script type="module">
+      document.addEventListener('DOMContentLoaded', async () => {
+        await customElements.whenDefined('gmpx-store-locator');
+        const locator = document.querySelector('gmpx-store-locator');
+        locator.configureFromQuickBuilder(CONFIGURATION);
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Please note unpkg.com is unaffiliated with Google Maps Platform. -->
+    <script type="module" src="https://unpkg.com/@googlemaps/extended-component-library@0.6"></script>
+
+    <!-- Uses components from the Extended Component Library; see
+         https://github.com/googlemaps/extended-component-library for more information
+         on these HTML tags and how to configure them. -->
+    <gmpx-api-loader key="YOUR_API_KEY_HERE" solution-channel="GMP_QB_locatorplus_v10_c"></gmpx-api-loader>
+    <gmpx-store-locator map-id="DEMO_MAP_ID"></gmpx-store-locator>
+  </body>
+</html>

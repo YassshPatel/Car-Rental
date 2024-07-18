@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <!--
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+<!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-white">
+  <body class="h-full">
+  ```
+-->
+<section class="py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 grid-cols-1 gap-x-24">
+          <div class="">
+              <div class="">
+                  <h2 class="text-gray-900 font-manrope text-4xl font-semibold leading-10 mb-9 lg:text-left text-center">Welcome Back :)</h2>
+                  <form id="registerForm" class="userForm">
+                    <div class="mb-6">
+                        <input type="email" id="email" class="w-full h-14 shadow-sm text-gray-600 placeholder-text-400 text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none py-2 px-4" placeholder="Email">
+                        <p id="emailError" class="text-red-600 hidden">Invalid email format</p>
+                    </div>
+                    <div class="mb-6">
+                        <input type="password" id="password" class="w-full h-14 shadow-sm text-gray-600 placeholder-text-400 text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none py-2 px-4" placeholder="Password">
+                        <p id="passwordError" class="text-red-600 hidden">Password must be at least 6 characters</p>
+                    </div>
+                    <button type="submit" class="w-full h-12 text-center text-white text-base font-semibold leading-6 rounded-full bg-indigo-600 shadow transition-all duration-700 hover:bg-indigo-800 mt-4">Login</button>
+                </form>
+                  <script src="./script/validation.js"></script>
+                  <p class="mt-10 text-center text-sm text-gray-500">
+                    Not a member?
+                    <a href="register.html" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Register</a>
+                  </p>
+              </div>
+          </div>
+          <div class="lg:max-w-xl w-full h-[600px] flex items-center justify-center  bg-cover bg-no-repeat bg-[url('https://pagedone.io/asset/uploads/1696245837.png')] ">
+              
+          </div>
+    </div>
+  </div>
+</section>
+                                          
+  
+</body>
+</html>
